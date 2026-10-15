@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ArixPHP documentation is currently being prepared.">
+    <meta name="theme-color" content="#f5f8f9" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#101820" media="(prefers-color-scheme: dark)">
+    <title>Documentation is under construction · ArixPHP</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+            --font-sans: system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif;
+            --color-bg: #f5f8f9;
+            --color-surface: #ffffff;
+            --color-text: #16232b;
+            --color-muted: #4c5f6b;
+            --color-border: #d2dce2;
+            --color-accent: #0e8c6f;
+            --color-selection: rgb(14 140 111 / 0.25);
+            --radius-md: 0.5rem;
+            --radius-lg: 0.8rem;
+            --shadow-md: 0 4px 12px rgb(16 24 32 / 0.1);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-bg: #101820;
+                --color-surface: #16202a;
+                --color-text: #eaf2f5;
+                --color-muted: #c3d4df;
+                --color-border: #38505e;
+                --color-accent: #80e8c7;
+                --color-selection: rgb(128 232 199 / 0.25);
+                --shadow-md: 0 4px 12px rgb(0 0 0 / 0.2);
+            }
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+
+        html {
+            font-family: var(--font-sans);
+            background: var(--color-bg);
+            color: var(--color-text);
+            text-rendering: optimizeLegibility;
+        }
+
+        body {
+            min-block-size: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            padding: clamp(1.5rem, 5vw, 4rem);
+        }
+
+        ::selection { background: var(--color-selection); }
+
+        .notice {
+            inline-size: min(100%, 42rem);
+            text-align: center;
+        }
+
+        .brand {
+            display: inline-block;
+            margin-block-end: clamp(2.5rem, 7vw, 4.5rem);
+        }
+
+        .brand img {
+            display: block;
+            inline-size: min(12rem, 52vw);
+            block-size: auto;
+        }
+
+        h1 {
+            max-inline-size: 14ch;
+            margin: 0 auto 1rem;
+            font-size: clamp(2.4rem, 8vw, 4.8rem);
+            line-height: 1.08;
+            letter-spacing: -0.035em;
+            text-wrap: balance;
+        }
+
+        .lead {
+            max-inline-size: 48ch;
+            margin: 0 auto;
+            color: var(--color-muted);
+            font-size: clamp(1.0625rem, 2vw, 1.25rem);
+            line-height: 1.65;
+            text-wrap: pretty;
+        }
+
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.625rem;
+            margin-block-start: clamp(2.5rem, 6vw, 3.5rem);
+            padding: 0.875rem 1.125rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            background: var(--color-surface);
+            box-shadow: var(--shadow-md);
+            color: var(--color-muted);
+            font-size: 0.9375rem;
+            line-height: 1.4;
+            text-align: start;
+        }
+
+        .status strong {
+            color: var(--color-text);
+            font-weight: 600;
+        }
+
+        .status-dot {
+            flex: 0 0 auto;
+            inline-size: 0.625rem;
+            block-size: 0.625rem;
+            border-radius: 50%;
+            background: var(--color-accent);
+            box-shadow: 0 0 0 0.25rem var(--color-selection);
+        }
+
+        @media (max-width: 28rem) {
+            .status { align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+    <main class="notice">
+        <div class="brand">
+            <img src="arix-full.webp" width="680" height="420" alt="ArixPHP">
+        </div>
+        <h1>Documentation is under construction.</h1>
+        <p class="lead">We’re preparing practical guides and references for ArixPHP. Please check back soon.</p>
+        <aside class="status" aria-label="Documentation status">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span><strong>Building the docs</strong><br>New material is on its way.</span>
+        </aside>
+    </main>
+</body>
+</html>
