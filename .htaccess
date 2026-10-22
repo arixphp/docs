@@ -1,0 +1,39 @@
+Options -Indexes -MultiViews
+DirectoryIndex index.php
+
+<FilesMatch "(^\.|\.(?:md|ini|log|sqlite|db)$)">
+    Require all denied
+</FilesMatch>
+
+<FilesMatch "(?i)^phpunit\.xml(?:\.dist)?$">
+    Require all denied
+</FilesMatch>
+
+# Required: Apache 2.4+, mod_headers, mod_mime, mod_rewrite and AllowOverride.
+# The virtual host must set TraceEnable Off (not permitted in .htaccess).
+# Do not silently bypass security rules when a required module is missing.
+<FilesMatch "(?i)\.(?:php|html?|css|js)$">
+    Header onsuccess setifempty Cache-Control "no-cache" "expr=-z resp('Cache-Control')"
+</FilesMatch>
+
+# ARIX ASSET POLICY BEGIN
+# The virtual host must set "TraceEnable Off"; it cannot be set from .htaccess.
+RewriteEngine On
+RewriteRule ^(?:app|core|cli|tests|docs|storage|assets)(?:/|$) - [F,L,NC]
+RewriteRule (^|/)\. - [F,L]
+RewriteRule ^phpunit\.xml(?:\.dist)?$ - [F,L,NC]
+RewriteRule ^(?:styles|scripts|fonts|media)(?:/|$) - [E=ARIX_ASSET:1,NC]
+RewriteCond %{REQUEST_METHOD} !^(?:GET|HEAD)$
+RewriteRule ^(?:styles|scripts|fonts|media)(?:/|$) - [R=405,L,NC]
+Header always set Allow "GET, HEAD" env=ARIX_ASSET expr=%{REQUEST_METHOD} !~ ^(?:GET|HEAD)$
+Header always set X-Content-Type-Options nosniff
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^(?:index\.php|robots\.txt|(?:styles/(?:[A-Za-z0-9_-]+/)*[A-Za-z0-9_-]+\.(?i:css)|scripts/(?:[A-Za-z0-9_-]+/)*[A-Za-z0-9_-]+\.(?i:js)|fonts/(?:[A-Za-z0-9_-]+/)*[A-Za-z0-9_-]+\.(?i:woff|woff2|ttf|otf)|media/(?:[A-Za-z0-9_-]+/)*[A-Za-z0-9_-]+\.(?i:avif|gif|ico|jpg|jpeg|png|webp|mp4|webm|ogv)|favicon\.ico))$ - [L]
+RewriteCond %{ENV:ARIX_ASSET} =1 [OR]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [F,L]
+# ARIX ASSET POLICY END
+
+RewriteCond %{HTTP:Authorization} .
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteRule ^ index.php [L]

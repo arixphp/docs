@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+/*
+ * Arix CSS · application entry point (no build, native CSS)
+ * Tailwind-inspired (utilities + layers) but written by hand.
+ * Layer order: theme < base < components < utilities < application.
+ * Managed defaults live in arix/ and are updated by the CLI: do not edit
+ * them. Override tokens in theme.css and add custom rules to the
+ * application layer (theme.css or components.css).
+ */
+@layer theme, base, components, utilities, application;
+
+@import url("arix/tokens.css");
+@import url("arix/base.css");
+@import url("arix/components.css");
+@import url("arix/utilities.css");
+@import url("theme.css");
