@@ -9,4 +9,5 @@ return [
     'locales' => ['es', 'en'],
     'default_locale' => 'en',
     'max_body_bytes' => 1048576,
+    'trusted_hosts' => ['^arix\.omarbarbosa\.com$'],
 ];
