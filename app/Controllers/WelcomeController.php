@@ -11,8 +11,8 @@ class WelcomeController
     public function index(): View
     {
         return view('index', [
-            'title' => trans('home.title'),
-            'description' => trans('home.description'),
+            'title' => 'Build for the web',
+            'description' => 'Build PHP websites with Arix and deploy them on traditional hosting.',
         ]);
     }
 }

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ config('app.locale') }}">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +18,7 @@
     @endif
 </head>
 <body>
-    <a class="skip-link" href="#main-content">{{ trans('nav.skip') }}</a>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header>
         <a class="brand" href="{{ url('/') }}">
             <img class="brand-mark" src="{{ media('arix-icon.webp') }}" alt="" width="96" height="96" decoding="async">
@@ -27,6 +27,6 @@
         @include('partials.navigation')
     </header>
     <main id="main-content" tabindex="-1">@yield('content')</main>
-    <footer>{{ trans('footer') }}</footer>
+    <footer>Server-rendered HTML. JavaScript only when you need it.</footer>
 </body>
 </html>
