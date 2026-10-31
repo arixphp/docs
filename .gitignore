@@ -10,3 +10,7 @@ frankenphp
 .frontend.lock
 .css-update.lock
 .js-update.lock
+.env
+.env.*
+!.env.example
+.impeccable
