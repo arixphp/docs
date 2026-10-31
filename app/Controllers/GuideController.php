@@ -15,7 +15,7 @@ class GuideController
         private readonly GuidePage $guidePage
     ) {}
 
-    public function redirect(): RedirectResponse
+    public function index(): RedirectResponse
     {
         $target = url('/guide');
 
