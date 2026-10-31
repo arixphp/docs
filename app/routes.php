@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use App\Controllers\GuideController;
 use App\Controllers\WelcomeController;
-use App\Documentation\Guide;
+use App\Services\Guide;
 use Arix\Facades\Route;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('home');

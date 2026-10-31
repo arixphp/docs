@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Documentation;
+namespace App\Services;
 
 class Guide
 {

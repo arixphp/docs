@@ -4,17 +4,15 @@ Arix can read developer-owned Markdown documents from `app/content` and convert 
 
 ## Reading Documents {#reading-documents}
 
-Use `Markdown::toHtml()` when you only need an HTML string. From a controller action, resolve the reader with `app()` and convert the document with the Markdown facade:
+Use `Markdown::html()` when you need an HTML string from a document. From a controller action, pass its path to the Markdown facade:
 
 ```php
 use Arix\Facades\Markdown;
-use Arix\Markdown\DocumentReader;
 use Arix\Views\Contracts\View;
 
 public function show(): View
 {
-    $source = app(DocumentReader::class)->read('docs/intro.md');
-    $html = Markdown::toHtml($source);
+    $html = Markdown::html('docs/intro.md');
 
     return view('document', ['content' => $html]);
 }
@@ -22,17 +20,17 @@ public function show(): View
 
 The example reads `app/content/docs/intro.md`. Document paths are relative and case-sensitive, end in `.md`, and must not contain traversal. Keep the content tree free of links and writable only by trusted users; do not rely on path validation as authorization.
 
+For other uses, `Markdown::read('docs/intro.md')` returns the Markdown source, while `Markdown::parse($source)` converts a Markdown string to HTML. The facade uses the core `DocumentReader` to read documents.
+
 Use `Markdown::render()` when you also need headings, for example to build a table of contents:
 
 ```php
 use Arix\Facades\Markdown;
-use Arix\Markdown\DocumentReader;
 use Arix\Views\Contracts\View;
 
 public function show(): View
 {
-    $source = app(DocumentReader::class)->read('docs/intro.md');
-    $document = Markdown::render($source);
+    $document = Markdown::render('docs/intro.md');
 
     return view('document', [
         'content' => $document->html,
@@ -54,7 +52,7 @@ The result contains `html` and an ordered `headings` list. Each heading has `lev
 <article>{!! $content !!}</article>
 ```
 
-Unlike `toHtml()`, `render()` adds the corresponding IDs to the HTML headings. The raw output above is appropriate only for trusted document content; heading IDs and titles use escaped template output.
+Unlike `html()`, `render()` adds the corresponding IDs to the HTML headings. The raw output above is appropriate only for trusted document content; heading IDs and titles use escaped template output.
 
 To keep a link stable when a heading is renamed, declare its ID in the document:
 
