@@ -1,16 +1,13 @@
-# ArixPHP
+# ArixPHP Documentation
 
-ArixPHP is a PHP application skeleton that provides a starting point for building
-your own web applications. It includes an application structure and a bundled
-framework core, with routes, controllers, views, and translations you can
-customize for your project.
+This repository contains the official documentation website for ArixPHP,
+including guides and practical reference material for building applications
+and using the Arix CLI.
+
+Official documentation: [https://arix.omarbarbosa.com/](https://arix.omarbarbosa.com/)
 
 Designed for traditional PHP hosting, applications built with ArixPHP can be
 deployed without SSH, Composer, Node, or frontend build steps on the server.
-
-## Learning Arix
-
-The official documentation will be available at [arix.omarbarbosa.com](https://arix.omarbarbosa.com).
 
 ## Security Vulnerabilities
 
