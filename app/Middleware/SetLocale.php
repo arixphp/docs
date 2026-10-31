@@ -29,13 +29,19 @@ class SetLocale implements Middleware
                 if (str_starts_with($supported, $language) || str_starts_with($language, $supported)) {
                     $request->setLocale($preferred);
 
-                    return $next($request);
+                    $response = $next($request);
+                    $response->setVary('Accept-Language', false);
+
+                    return $response;
                 }
             }
         }
 
         $request->setLocale($config->get('app.default_locale'));
 
-        return $next($request);
+        $response = $next($request);
+        $response->setVary('Accept-Language', false);
+
+        return $response;
     }
 }
