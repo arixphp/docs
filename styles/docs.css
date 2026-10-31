@@ -45,8 +45,16 @@
     .guide-content p { color: var(--color-muted); }
     .guide-content pre { overflow-x: auto; padding: 1.5rem; border-radius: var(--radius-md); background: #16232b; color: #eaf2f5; line-height: 1.7; }
     .guide-content pre code { color: inherit; background: none; padding: 0; }
-    .copy-code { font: inherit; font-size: .8rem; padding: .35rem .7rem; color: var(--color-text); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-sm); cursor: pointer; }
-    .copy-status { margin-inline-start: .75rem; color: var(--color-muted); font-size: .8rem; }
+    .php-keyword { color: #cbb9f7; }
+    .php-variable { color: #9bd8f3; }
+    .php-string { color: #a5f3dc; }
+    .php-comment { color: #a5b7c2; }
+    .php-number { color: #f7c995; }
+    .code-example { position: relative; margin-block: 1em; border-radius: var(--radius-md); background: #16232b; }
+    .guide-content .code-example pre { margin: 0; padding-top: 4.5rem; }
+    .copy-code { position: absolute; top: .75rem; right: .75rem; font: inherit; font-size: .8rem; padding: .35rem .7rem; color: var(--color-text); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-sm); cursor: pointer; }
+    .copy-status { display: block; color: #eaf2f5; font-size: .8rem; }
+    .copy-status:not(:empty) { padding: 0 1.5rem 1rem; }
     .guide-toc { display: flex; flex-direction: column; align-items: flex-start; gap: .5rem; align-self: start; font-size: .875rem; }
     .guide-toc a { color: var(--color-muted); text-decoration: none; }
     .guide-pagination { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border); }
