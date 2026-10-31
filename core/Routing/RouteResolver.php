@@ -7,7 +7,7 @@ namespace Arix\Routing;
 use Arix\Config\ConfigServices;
 use Arix\Container\Container;
 use Arix\Container\ContainerContext;
-use Arix\Support\ApplicationAutoloader;
+use Arix\Runtime\Environment;
 use Arix\Support\RuntimePaths;
 use LogicException;
 use RuntimeException;
@@ -20,7 +20,7 @@ class RouteResolver
     {
         $paths = RuntimePaths::fromApplicationRoot($root);
 
-        return ApplicationAutoloader::run($paths->root, static fn (): RouteUrlGenerator => self::load($paths));
+        return Environment::run($paths->root, static fn (): RouteUrlGenerator => self::load($paths));
     }
 
     private static function load(RuntimePaths $paths): RouteUrlGenerator
@@ -44,11 +44,7 @@ class RouteResolver
             require $routesFile;
         });
 
-        $basePath = $defaults->get('app.base_path', '');
-
-        if (! is_string($basePath)) {
-            throw new RuntimeException('Application base path is invalid.');
-        }
+        $url = ApplicationUrl::fromConfiguration($defaults->get('app', []));
 
         $registry = $container->get(RouteRegistry::class);
 
@@ -56,7 +52,7 @@ class RouteResolver
             throw new RuntimeException('RouteRegistry binding returned an incompatible instance.');
         }
 
-        return new RouteUrlGenerator($registry, new UrlGenerator($basePath, '/'));
+        return new RouteUrlGenerator($registry, UrlGenerator::fromApplicationUrl($url->url));
     }
 
     public static function fromCwd(): RouteUrlGenerator
