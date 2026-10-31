@@ -30,18 +30,20 @@ class GuideController
             'currentPath' => $path,
             'contents' => $contents,
             'content' => $content,
+            'contentLanguage' => $contentLanguage,
             'previous' => $previous,
             'next' => $next
         ] = $this->guidePage->prepare($request);
 
         return view('guide.show', [
-            'title' => $page[0],
-            'description' => 'Learn how to build with ArixPHP.',
+            'title' => trans("guide.titles.{$page[2]}"),
+            'description' => trans('guide.description'),
             'page' => $page,
             'groups' => $groups,
             'currentPath' => $path,
             'contents' => $contents,
             'content' => $content,
+            'contentLanguage' => $contentLanguage,
             'previous' => $previous,
             'next' => $next,
         ]);
