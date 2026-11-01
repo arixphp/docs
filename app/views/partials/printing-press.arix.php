@@ -54,7 +54,5 @@
             <span data-press-step>{{ trans('home.press_publish') }}</span>
             <span data-press-step>{{ trans('home.press_share') }}</span>
         </div>
-        <button class="press-play" type="button" data-press-play data-next-label="{{ trans('home.press_next') }}" data-pause-label="{{ trans('home.press_pause') }}" data-resume-label="{{ trans('home.press_resume') }}" hidden>{{ trans('home.press_pause') }}</button>
-        <span class="press-status" data-press-status aria-live="polite"></span>
     </div>
 </figure>

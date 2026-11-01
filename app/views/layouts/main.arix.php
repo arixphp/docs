@@ -11,6 +11,7 @@
     <link rel="icon" type="image/webp" href="{{ media('arix-icon.webp') }}">
     <link rel="apple-touch-icon" href="{{ media('arix-icon.webp') }}">
     <link rel="stylesheet" href="{{ style('app.css') }}">
+    <link rel="stylesheet" href="{{ style('docs.css') }}">
     <script type="module" src="{{ script('app.js') }}"></script>
     @if (!empty($_SERVER['FRANKENPHP_HOT_RELOAD']))
         <meta name="frankenphp-hot-reload:url" content="{{ $_SERVER['FRANKENPHP_HOT_RELOAD'] }}">

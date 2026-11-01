@@ -21,7 +21,7 @@ return [
         'hero_second' => 'content-driven websites.',
         'lead' => 'Build websites with PHP, HTML, CSS, and JavaScript, with everything you need to bring your ideas to the web.',
         'get_started' => 'Get Started', 'explore' => 'Explore the documentation', 'first_app' => 'YOUR FIRST APPLICATION',
-        'press_title' => 'Create, publish, and share', 'press_description' => 'A printing press represents a page’s journey from creation to publication.', 'press_create' => 'Create', 'press_publish' => 'Publish', 'press_share' => 'Share', 'press_pause' => 'Pause', 'press_resume' => 'Resume', 'press_next' => 'Next step',
+        'press_title' => 'Create, publish, and share', 'press_description' => 'A printing press represents a page’s journey from creation to publication.', 'press_create' => 'Create', 'press_publish' => 'Publish', 'press_share' => 'Share',
         'code_caption' => 'From a fresh idea to a local application.', 'overview_title' => 'Create, publish, and share.',
         'overview_text' => 'From landing pages and blogs to documentation and corporate websites, Arix helps you turn content into experiences for the web.',
         'feature_one_title' => 'HTML from the server', 'feature_one' => 'Render your pages with PHP and deliver HTML to the browser. Add interactivity with JavaScript wherever your site needs it.',

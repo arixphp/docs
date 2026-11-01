@@ -31,9 +31,6 @@
     .press-footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; }
     .press-steps { display: flex; flex-wrap: wrap; gap: .75rem; color: #aabfbe; font-size: .8rem; }
     .press-steps span[aria-current="step"] { color: #a5f3dc; font-weight: 700; }
-    .press-play { padding: .5rem .75rem; color: #d7f4e4; background: transparent; border: 1px solid #6c8d85; border-radius: var(--radius-sm); font: inherit; font-size: .8rem; cursor: pointer; }
-    .press-play:hover { background: #29443f; }
-    .press-status { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
     @media (prefers-reduced-motion: reduce) { .press-sheet { transition: none; } }
     .home-overview { display: grid; gap: 3rem; padding-block: 5rem; border-top: 1px solid var(--color-border); }
     .home-overview h2, .home-next h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; letter-spacing: -.03em; }
