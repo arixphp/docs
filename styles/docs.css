@@ -18,7 +18,7 @@
     .button-secondary { color: var(--color-text); border: 1px solid var(--color-border); }
     .home-code { background: #16232b; color: #eaf2f5; border-radius: var(--radius-lg); padding: 1.75rem; box-shadow: 0 20px 45px rgb(16 24 32 / .16); }
     .code-heading { display: flex; justify-content: space-between; gap: 1rem; color: #c3d4df; font-size: .75rem; font-weight: 600; letter-spacing: .06em; }
-    .home-code pre { color: #a5f3dc; margin-block: 2rem; padding: 0; background: transparent; line-height: 2; }
+    .home-code pre { color: #a5f3dc; margin-block: 2rem; padding: 1rem; background: transparent; line-height: 2; }
     .home-code p { margin: 0; color: #c3d4df; font-size: .875rem; }
     .home-overview { display: grid; gap: 3rem; padding-block: 5rem; border-top: 1px solid var(--color-border); }
     .home-overview h2, .home-next h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; letter-spacing: -.03em; }
