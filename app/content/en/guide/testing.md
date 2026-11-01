@@ -16,7 +16,7 @@ it('shows the home page', function (): void {
 });
 ```
 
-HTTP tests dispatch requests in process. Keep framework tests in the CLI project and application-specific tests in your application.
+HTTP tests dispatch requests in process.
 
 The test response supports `assertStatus()`, `assertOk()`, and `assertSee()`. The test case also provides methods such as `post()`, `put()`, `patch()`, and `delete()` for testing other routes.
 

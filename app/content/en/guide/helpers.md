@@ -1,6 +1,6 @@
 # Helpers
 
-Arix provides helpers for common application tasks. Helpers that access application services must run inside an active application container.
+Arix provides helpers for common application tasks.
 
 ## URLs {#urls}
 

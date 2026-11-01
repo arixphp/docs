@@ -16,7 +16,7 @@ it('shows the home page', function (): void {
 });
 ```
 
-Las pruebas HTTP despachan solicitudes dentro del proceso. Mantén las pruebas del framework en el proyecto CLI y las pruebas específicas de la aplicación en tu aplicación.
+Las pruebas HTTP despachan solicitudes dentro del proceso.
 
 La respuesta de prueba admite `assertStatus()`, `assertOk()` y `assertSee()`. El caso de prueba también proporciona métodos como `post()`, `put()`, `patch()` y `delete()` para probar otras rutas.
 

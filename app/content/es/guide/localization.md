@@ -31,5 +31,3 @@ Utiliza arrays anidados en lugar de claves literales que contengan puntos. El es
 La aplicación utiliza `app.default_locale` por defecto. El entorno no añade automáticamente un prefijo de idioma a las rutas ni negocia el idioma a partir de la solicitud; una aplicación puede implementar la selección de idioma en middleware.
 
 Si falta una traducción para el idioma actual, el traductor busca en el idioma predeterminado. Si ningún catálogo proporciona una cadena no vacía, devuelve la propia clave.
-
-El helper `trans` requiere un contenedor de aplicación activo; fuera de ese ámbito lanza una `LogicException`.

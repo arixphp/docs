@@ -31,5 +31,3 @@ Use nested arrays instead of literal keys containing dots. Escaping remains the 
 The application uses `app.default_locale` by default. The runtime does not automatically add a language prefix to routes or negotiate the language from a visitor's request; an application may choose to implement locale selection in middleware.
 
 If a translation is missing for the current locale, the translator tries the default locale as a fallback. If neither catalog supplies a nonempty string, it returns the key itself.
-
-The `trans` helper requires an active application container; outside that scope it throws a `LogicException`.

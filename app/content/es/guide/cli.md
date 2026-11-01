@@ -1,6 +1,6 @@
 # Arix CLI {#arix-cli}
 
-La CLI crea y mantiene aplicaciones desde tu equipo de desarrollo. Ejecuta `arix new` desde el directorio donde quieras crear el proyecto; ejecuta los demás comandos desde la raíz de la aplicación.
+La CLI crea y mantiene aplicaciones en tu entorno de desarrollo. Ejecuta `arix new` desde el directorio donde quieras crear el proyecto; ejecuta los demás comandos desde la raíz de la aplicación.
 
 ## Desarrollo {#development}
 

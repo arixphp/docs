@@ -18,7 +18,7 @@ public function show(): View
 }
 ```
 
-The example reads `app/content/docs/intro.md`. Document paths are relative and case-sensitive, end in `.md`, and must not contain traversal. Keep the content tree free of links and writable only by trusted users; do not rely on path validation as authorization.
+The example reads `app/content/docs/intro.md`. Document paths are relative and case-sensitive, end in `.md`, and must not contain traversal.
 
 For other uses, `Markdown::read('docs/intro.md')` returns the Markdown source, while `Markdown::parse($source)` converts a Markdown string to HTML. The facade uses the core `DocumentReader` to read documents.
 

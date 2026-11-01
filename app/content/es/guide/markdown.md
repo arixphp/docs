@@ -18,7 +18,7 @@ public function show(): View
 }
 ```
 
-El ejemplo lee `app/content/docs/intro.md`. Las rutas son relativas, distinguen mayúsculas, terminan en `.md` y no deben contener recorrido de directorios. Mantén el árbol de contenido libre de enlaces y permite su escritura solo a usuarios confiables; no dependas de la validación de rutas como autorización.
+El ejemplo lee `app/content/docs/intro.md`. Las rutas son relativas, distinguen mayúsculas, terminan en `.md` y no deben contener recorrido de directorios.
 
 Para otros usos, `Markdown::read('docs/intro.md')` devuelve el contenido Markdown, mientras que `Markdown::parse($source)` convierte una cadena Markdown a HTML. La fachada utiliza el `DocumentReader` del core para leer documentos.
 

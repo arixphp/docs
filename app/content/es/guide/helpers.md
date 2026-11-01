@@ -1,6 +1,6 @@
 # Helpers {#helpers}
 
-Arix proporciona helpers para tareas habituales de la aplicación. Los helpers que acceden a servicios deben ejecutarse dentro de un contenedor de aplicación activo.
+Arix proporciona helpers para tareas habituales de la aplicación.
 
 ## URL {#urls}
 

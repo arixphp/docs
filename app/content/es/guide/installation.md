@@ -1,6 +1,6 @@
 # Instalación {#installation}
 
-La CLI de Arix crea y mantiene aplicaciones en tu equipo de desarrollo.
+La CLI de Arix crea y mantiene aplicaciones en tu entorno de desarrollo.
 
 ## Instalar la CLI {#install-the-cli}
 

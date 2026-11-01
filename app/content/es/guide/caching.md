@@ -4,6 +4,6 @@ Arix almacena las plantillas compiladas separadas del código de la aplicación.
 
 ## Comportamiento de la caché {#behavior}
 
-El framework guarda las plantillas compiladas en `storage/cache`. Este directorio debe ser privado y la aplicación debe tener permisos de escritura. Configura la versión de la caché en `app/config/cache.php`; `cache.path` está reservado.
+El framework guarda las plantillas compiladas en `storage/cache`. Este directorio debe ser privado y la aplicación debe tener permisos de escritura. Configura la versión de la caché en `app/config/cache.php`.
 
 La API de rutas instalada actualmente no ofrece una caché HTML de rutas opcional. No supongas que compilar una plantilla almacena en caché el resultado de una página ni datos externos.
