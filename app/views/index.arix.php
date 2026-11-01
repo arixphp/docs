@@ -14,13 +14,7 @@
             </a>
         </div>
     </div>
-    <div class="home-code">
-        <div class="code-heading"><span>{{ trans('home.first_app') }}</span><span>Terminal</span></div>
-        <pre><code>arix new my-site
-cd my-site
-arix dev</code></pre>
-        <p>{{ trans('home.code_caption') }}</p>
-    </div>
+    @include('partials.printing-press')
 </section>
 
 <section class="home-overview">

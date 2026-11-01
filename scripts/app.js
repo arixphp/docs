@@ -2,6 +2,7 @@
 // and has no side effects on import: only what is called below runs.
 import { enhance } from './arix/index.js';
 import { enhanceCodeExamples } from './copy.js';
+import { enhancePress } from './press.js';
 
 // Opt-in progressive enhancement. Only elements marked with data-arix-get or
 // data-arix-post are handled; links and forms without those attributes keep
@@ -9,3 +10,4 @@ import { enhanceCodeExamples } from './copy.js';
 // are registered per component with define(), never automatically.
 enhance(document);
 enhanceCodeExamples(document, navigator.clipboard);
+enhancePress(document);
