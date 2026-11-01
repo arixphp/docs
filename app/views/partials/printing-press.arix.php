@@ -4,6 +4,11 @@
     </figcaption>
     <svg class="press-art" viewBox="0 0 600 330" role="img" aria-labelledby="press-description">
         <title id="press-description">{{ trans('home.press_description') }}</title>
+        <defs>
+            <clipPath id="press-paper-path" clipPathUnits="userSpaceOnUse">
+                <path d="M0 0H260V330H0Z M320 0H600V330H320Z"/>
+            </clipPath>
+        </defs>
         <ellipse cx="300" cy="284" rx="255" ry="18" fill="#101a20" opacity=".55"/>
         <!-- The press bed, feet, rails and mounted rollers. -->
         <path d="M40 223 379 129 560 205 220 302Z" fill="#243b42" stroke="#71908f" stroke-width="2"/>
@@ -33,9 +38,11 @@
         <path d="M268 167 290 161 M268 174 294 167 M268 181 286 176" stroke="#8de7be" stroke-width="2"/>
         <path d="M326 150 342 157 M326 157 342 164 M326 164 342 171 M326 171 342 178 M326 178 342 185" stroke="#75938a" stroke-width="2"/>
         <circle cx="248" cy="158" r="2" fill="#d3e8dc"/><circle cx="313" cy="140" r="2" fill="#d3e8dc"/><circle cx="248" cy="207" r="2" fill="#d3e8dc"/><circle cx="313" cy="189" r="2" fill="#d3e8dc"/>
-        <path d="M269 117 305 107 330 117 294 128Z" fill="#8ba9a0" stroke="#d0e3d7"/><path d="M294 128 330 117 330 125 294 136Z" fill="#496c63" stroke="#a4c0b4"/>
-        <ellipse cx="298" cy="117" rx="6" ry="3" fill="#1a3433" stroke="#c4dfd0"/>
-        <path d="M298 116v-15" stroke="#b6d4c5" stroke-width="3"/><circle cx="298" cy="99" r="4" fill="#8de7be" stroke="#d3f5df"/>
+        <g class="press-head">
+            <path d="M269 117 305 107 330 117 294 128Z" fill="#8ba9a0" stroke="#d0e3d7"/><path d="M294 128 330 117 330 125 294 136Z" fill="#496c63" stroke="#a4c0b4"/>
+            <ellipse cx="298" cy="117" rx="6" ry="3" fill="#1a3433" stroke="#c4dfd0"/>
+            <path d="M298 116v-15" stroke="#b6d4c5" stroke-width="3"/><circle cx="298" cy="99" r="4" fill="#8de7be" stroke="#d3f5df"/>
+        </g>
         <!-- Output tray, rails, and finished page. -->
         <path d="M354 202 446 177 518 207 426 233Z" fill="#38534f" stroke="#8ca9a1" stroke-width="2"/>
         <path d="M354 202 426 233 426 242 354 211Z M426 233 518 207 518 216 426 242Z" fill="#20363a" stroke="#77938d"/>
@@ -43,9 +50,12 @@
         <path d="M370 200 426 222 495 204" fill="none" stroke="#b4d2c5"/>
         <circle cx="366" cy="205" r="2" fill="#d3e8dc"/><circle cx="504" cy="207" r="2" fill="#d3e8dc"/>
         <!-- A page travels from the feed tray to the output tray. -->
-        <g class="press-sheet">
-            <path d="M126 207 166 196 205 212 165 224Z" fill="#d7f4e4" stroke="#82c9ac" stroke-width="2"/>
-            <path d="M137 207 163 200 M143 211 174 202 M150 214 168 209" stroke="#518d79" stroke-width="1.5"/>
+        <g clip-path="url(#press-paper-path)">
+            <g class="press-sheet">
+                <path d="M126 207 166 196 205 212 165 224Z" fill="#d7f4e4" stroke="#82c9ac" stroke-width="2"/>
+                <path class="press-paper-content" d="M137 207 163 200 M143 211 174 202 M150 214 168 209" stroke="#518d79" stroke-width="1.5"/>
+                <path class="press-paper-page" d="M134 207 164 199 193 211 163 220Z M140 208 164 202 M146 211 175 203 M153 214 174 208" fill="none" stroke="#518d79" stroke-width="1.5"/>
+            </g>
         </g>
     </svg>
     <div class="press-footer">

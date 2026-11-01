@@ -8,7 +8,7 @@ export function enhancePress(root) {
     }
 
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const sheet = press.querySelector('.press-sheet');
+    const artwork = press.querySelector('.press-art');
     let timer;
     let visible = !('IntersectionObserver' in window);
 
@@ -32,14 +32,24 @@ export function enhancePress(root) {
         }
 
         timer = setTimeout(() => {
-            showStep((Number(press.dataset.step) + 1) % steps.length);
+            if (press.dataset.reset === 'fade') {
+                press.dataset.reset = 'position';
+                showStep(0);
+            } else if (press.dataset.reset === 'position') {
+                delete press.dataset.reset;
+            } else if (Number(press.dataset.step) === steps.length - 1) {
+                press.dataset.reset = 'fade';
+            } else {
+                showStep(Number(press.dataset.step) + 1);
+            }
+
             schedule();
-        }, 1800);
+        }, press.dataset.reset === 'fade' ? 400 : press.dataset.reset === 'position' ? 50 : 1800);
     }
 
     function synchronize() {
         const running = !reducedMotion.matches && visible && !document.hidden;
-        sheet?.getAnimations().forEach((animation) => running ? animation.play() : animation.pause());
+        artwork?.getAnimations({ subtree: true }).forEach((animation) => running ? animation.play() : animation.pause());
         schedule();
     }
     showStep(0);
@@ -48,7 +58,7 @@ export function enhancePress(root) {
 
     if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver((entries) => {
-            visible = entries[0].isIntersecting;
+            visible = entries[entries.length - 1].isIntersecting;
             synchronize();
         });
         observer.observe(press);
