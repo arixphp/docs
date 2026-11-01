@@ -29,7 +29,7 @@ return [
         'feature_three_title' => 'Develop your way', 'feature_three' => 'Write vanilla CSS and JavaScript without requiring a build process.',
         'next_title' => 'Ready to build something?', 'next_text' => 'Start with the essentials, then find the details when you need them.', 'read_guide' => 'Read the guide',
     ],
-    'footer' => 'Server-rendered HTML. JavaScript only when you need it.',
+    'footer' => 'HTML on the server. Websites with the best SEO.',
     'guide' => [
         'browse' => 'Browse documentation',
         'navigation' => 'Documentation',

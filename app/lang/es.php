@@ -29,7 +29,7 @@ return [
         'feature_three_title' => 'Desarrollo a tu manera', 'feature_three' => 'Escribe CSS y JavaScript vanilla sin necesidad de procesos de build.',
         'next_title' => '¿Listo para crear algo?', 'next_text' => 'Empieza por lo esencial y consulta los detalles cuando los necesites.', 'read_guide' => 'Leer la guía',
     ],
-    'footer' => 'HTML en el servidor. JavaScript solamente cuando lo necesitas.',
+    'footer' => 'HTML en el servidor. Webs con el mejor SEO.',
     'guide' => [
         'browse' => 'Explorar la documentación',
         'navigation' => 'Documentación',
