@@ -18,6 +18,6 @@ it('shows the home page', function (): void {
 
 HTTP tests dispatch requests in process.
 
-The test response supports `assertStatus()`, `assertOk()`, and `assertSee()`. The test case also provides methods such as `post()`, `put()`, `patch()`, and `delete()` for testing other routes.
+The test response supports `assertStatus()`, `assertOk()`, and `assertSee()`. Pass an `Arix\Constants\HttpStatusCode` case to `assertStatus()`, such as `HttpStatusCode::NOT_FOUND`. The test case also provides methods such as `post()`, `put()`, `patch()`, and `delete()` for testing other routes.
 
 To check formatting without changing files, run `arix format --test`. Neither testing nor formatting requires an application-side Composer installation.
