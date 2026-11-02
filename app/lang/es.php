@@ -20,7 +20,7 @@ return [
         'hero_first' => 'El framework PHP para',
         'hero_second' => 'sitios web centrados en el contenido.',
         'lead' => 'Crea sitios web con PHP, HTML, CSS y JavaScript, sin Composer ni Node y sin procesos de builds.',
-        'get_started' => 'Empezar', 'explore' => 'Explorar la documentación', 'first_app' => 'TU PRIMERA APLICACIÓN',
+        'get_started' => 'Empezar', 'explore' => 'Documentación', 'first_app' => 'TU PRIMERA APLICACIÓN',
         'press_title' => 'Crea, publica y comparte', 'press_description' => 'Una imprenta representa el recorrido de una página desde su creación hasta su publicación.', 'press_create' => 'Crea', 'press_publish' => 'Publica', 'press_share' => 'Comparte',
         'code_caption' => 'De una idea a una aplicación local.', 'overview_title' => 'Crea, publica y comparte.',
         'overview_text' => 'Desde páginas de presentación y blogs hasta documentación y sitios corporativos, Arix te ayuda a convertir contenido en experiencias para la web.',

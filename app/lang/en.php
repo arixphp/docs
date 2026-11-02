@@ -20,7 +20,7 @@ return [
         'hero_first' => 'The PHP framework for',
         'hero_second' => 'content-driven websites.',
         'lead' => 'Build websites with PHP, HTML, CSS, and JavaScript, no Composer, no Node, no build steps.',
-        'get_started' => 'Get Started', 'explore' => 'Explore the documentation', 'first_app' => 'YOUR FIRST APPLICATION',
+        'get_started' => 'Get Started', 'explore' => 'Documentation', 'first_app' => 'YOUR FIRST APPLICATION',
         'press_title' => 'Create, publish, and share', 'press_description' => 'A printing press represents a page’s journey from creation to publication.', 'press_create' => 'Create', 'press_publish' => 'Publish', 'press_share' => 'Share',
         'code_caption' => 'From a fresh idea to a local application.', 'overview_title' => 'Create, publish, and share.',
         'overview_text' => 'From landing pages and blogs to documentation and corporate websites, Arix helps you turn content into experiences for the web.',
