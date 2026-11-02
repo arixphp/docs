@@ -11,30 +11,12 @@ arix tests
 arix format --test
 ```
 
+See the [development server guide](cli-development) for details.
+
 ## Generators {#generators}
 
-```sh
-arix make:controller WelcomeController
-arix make:middleware Example
-arix make:view welcome
-arix make:test Example
-arix make:test Example --unit
-```
-
-Generators do not replace existing files unless you explicitly use `--force`.
-
-Use `--path=/path/to/application` to target an application from another directory. The `--unit` option creates a unit test rather than a feature test.
+Generators create application files. See the [code generation guide](cli-generators) for commands and options.
 
 ## Managed Updates {#updates}
 
-```sh
-arix core:update --dry-run
-arix css:update --dry-run
-arix js:update --dry-run
-```
-
-Use `--dry-run` to inspect changes before updating managed framework files. Consult each command's `--help` for its current options.
-
-`arix core:update` uses the CLI's embedded bundle by default. To fetch the latest stable release instead, use `arix core:update --online`. Review the changes and compatibility before applying an update; application-owned files are not the managed core.
-
-For details, see the guides to the [development server](cli-development), [code generation](cli-generators), and [managed updates](cli-updates).
+The CLI updates the managed framework core and frontend assets. See the [managed updates guide](cli-updates) for commands, previews, and precautions.

@@ -11,30 +11,12 @@ arix tests
 arix format --test
 ```
 
+Consulta la [guía del servidor de desarrollo](cli-development) para más información.
+
 ## Generadores {#generators}
 
-```sh
-arix make:controller WelcomeController
-arix make:middleware Example
-arix make:view welcome
-arix make:test Example
-arix make:test Example --unit
-```
-
-Los generadores no reemplazan archivos existentes salvo que uses `--force` explícitamente.
-
-Usa `--path=/path/to/application` para seleccionar una aplicación desde otro directorio. La opción `--unit` crea una prueba unitaria en lugar de una prueba funcional.
+Los generadores crean archivos de la aplicación. Consulta la [guía de generación de código](cli-generators) para conocer los comandos y sus opciones.
 
 ## Actualizaciones administradas {#updates}
 
-```sh
-arix core:update --dry-run
-arix css:update --dry-run
-arix js:update --dry-run
-```
-
-Usa `--dry-run` para inspeccionar los cambios antes de actualizar archivos administrados del framework. Consulta `--help` de cada comando para conocer sus opciones actuales.
-
-Por defecto, `arix core:update` usa el paquete incluido en la CLI. Para descargar la última versión estable, utiliza `arix core:update --online`. Revisa los cambios y la compatibilidad antes de aplicar una actualización; los archivos de la aplicación no son parte del core administrado.
-
-Para más información, consulta las guías del [servidor de desarrollo](cli-development), la [generación de código](cli-generators) y las [actualizaciones administradas](cli-updates).
+La CLI actualiza el core del framework y los recursos frontend administrados. Consulta la [guía de actualizaciones administradas](cli-updates) para conocer los comandos, las previsualizaciones y las precauciones.
