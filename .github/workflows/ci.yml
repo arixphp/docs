@@ -53,6 +53,9 @@ jobs:
       - name: Show CLI version
         run: arix --version
 
+      - name: Prepare application environment
+        run: cp .env.example .env
+
       - name: Run application tests
         run: arix tests
 
