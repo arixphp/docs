@@ -24,16 +24,28 @@
     </div>
     <div class="feature-list">
         <div>
-            <h3>{{ trans('home.feature_one_title') }}</h3>
+            <h3><a href="{{ url('/guide/http') }}">{{ trans('home.feature_one_title') }}</a></h3>
             <p>{{ trans('home.feature_one') }}</p>
         </div>
         <div>
-            <h3>{{ trans('home.feature_two_title') }}</h3>
-            <p>{{ trans('home.feature_two') }}</p>
+            <h3><a href="{{ url('/guide/markdown') }}">{{ trans('home.feature_markdown_title') }}</a></h3>
+            <p>{{ trans('home.feature_markdown') }}</p>
         </div>
         <div>
-            <h3>{{ trans('home.feature_three_title') }}</h3>
-            <p>{{ trans('home.feature_three') }}</p>
+            <h3><a href="{{ url('/guide/views') }}">{{ trans('home.feature_views_title') }}</a></h3>
+            <p>{{ trans('home.feature_views') }}</p>
+        </div>
+        <div>
+            <h3><a href="{{ url('/guide/assets') }}">{{ trans('home.feature_frontend_title') }}</a></h3>
+            <p>{{ trans('home.feature_frontend') }}</p>
+        </div>
+        <div>
+            <h3><a href="{{ url('/guide/localization') }}">{{ trans('home.feature_localization_title') }}</a></h3>
+            <p>{{ trans('home.feature_localization') }}</p>
+        </div>
+        <div>
+            <h3><a href="{{ url('/guide/deployment') }}">{{ trans('home.feature_deployment_title') }}</a></h3>
+            <p>{{ trans('home.feature_deployment') }}</p>
         </div>
     </div>
 </section>
