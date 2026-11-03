@@ -28,6 +28,19 @@
         @include('partials.navigation')
     </header>
     <main id="main-content" tabindex="-1">@yield('content')</main>
-    <footer>{{ trans('footer') }}</footer>
+    <footer>
+        <div class="footer-identity">
+            <a class="brand footer-brand" href="{{ url('/') }}">
+                <img class="brand-mark" src="{{ media('arix-icon.webp') }}" alt="" width="96" height="96" decoding="async">
+                <span>{{ config('app.name') }}</span>
+            </a>
+            <span>{{ trans('footer') }}</span>
+        </div>
+        <nav aria-label="{{ trans('nav.label') }}">
+            <a href="{{ url('/') }}">{{ trans('nav.home') }}</a>
+            <a href="{{ url('/guide/') }}">{{ trans('guide.navigation') }}</a>
+            <a href="https://github.com/arixphp" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </nav>
+    </footer>
 </body>
 </html>
