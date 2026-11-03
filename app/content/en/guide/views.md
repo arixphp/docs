@@ -39,3 +39,5 @@ A child template can extend `layouts.main` and supply a section. Double braces e
 ```
 
 Use raw output only for HTML you trust. Dotted names select nested views, and `@include` can render a shared partial. Native `.php` views are also available when you prefer PHP templates.
+
+For example, `@include('partials.navigation')` renders `app/views/partials/navigation.arix.php` when that template exists. Native `.php` views run as PHP rather than being compiled as `.arix.php` templates.

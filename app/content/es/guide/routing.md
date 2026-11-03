@@ -27,6 +27,8 @@ Route::get('/articles/{id:\d+}', [ArticleController::class, 'show']);
 
 Lee `id` de los atributos de la solicitud en el controlador. Un parámetro corresponde a un segmento de ruta; su valor es una cadena controlada por el visitante. Valídalo para el uso previsto y escápalo al renderizar la salida.
 
+Para ver un ejemplo completo de controlador que lee y escapa un `id`, consulta [solicitudes y respuestas](http#requests).
+
 Las restricciones deben ser patrones válidos sin grupos de captura ni el delimitador `~`. Los nombres que comienzan por `_arix_` están reservados. Los segmentos finales opcionales usan corchetes:
 
 ```php

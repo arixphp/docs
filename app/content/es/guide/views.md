@@ -39,3 +39,5 @@ Una plantilla hija puede extender `layouts.main` y proporcionar una sección. La
 ```
 
 Usa salida sin escapar únicamente para HTML confiable. Los nombres con puntos seleccionan vistas anidadas y `@include` puede renderizar un parcial compartido. También hay vistas `.php` nativas si prefieres plantillas PHP.
+
+Por ejemplo, `@include('partials.navigation')` renderiza `app/views/partials/navigation.arix.php` cuando existe esa plantilla. Las vistas `.php` nativas se ejecutan como PHP en lugar de compilarse como plantillas `.arix.php`.

@@ -11,11 +11,13 @@ styles/    Public stylesheets
 scripts/   Public JavaScript
 media/     Public images and other media
 fonts/     Public font files
-storage/   Private cache and logs
+storage/   Private application files, cache, and logs
 tests/     Application tests
 ```
 
 Your application begins at `index.php`. Define routes in `app/routes.php` and keep your controllers in `app/Controllers`. Do not edit `core/`; it is managed by the CLI.
+
+Private files managed by `storage()` live under `storage/app/`. Developer-owned Markdown can live under the optional `app/content/` directory; see [file storage](storage) and [Markdown](markdown).
 
 ## Autoloading {#autoloading}
 

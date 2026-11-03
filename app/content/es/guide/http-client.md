@@ -25,6 +25,10 @@ Usa `json()` para una respuesta JSON; un JSON no válido genera una excepción d
 
 ## Seguridad {#security}
 
-Las redirecciones están desactivadas por defecto. El cliente verifica TLS, aplica límites de tiempo y tamaño de respuesta, y restringe las conexiones a direcciones pertenecientes al despliegue salvo que se permita un host explícitamente. Nunca consideres intrínsecamente segura una URL proporcionada por un visitante.
+Las redirecciones están desactivadas por defecto. El cliente verifica TLS y aplica límites de tiempo y tamaño de respuesta. Sin una lista de hosts permitidos, rechaza las direcciones reservadas, incluidas las privadas y las de loopback. Una lista explícita permite únicamente los hosts indicados y las direcciones a las que se resuelven; permitir un host es una decisión de confianza deliberada. Nunca consideres intrínsecamente segura una URL proporcionada por un visitante.
+
+```php
+$client = Http::create()->withAllowedHosts(['api.example.com']);
+```
 
 Si se habilitan las redirecciones, se eliminan las credenciales al pasar a otro origen y se rechazan las redirecciones de HTTPS a HTTP. Estas protecciones no hacen seguro reenviar cuerpos de solicitud no confiables.

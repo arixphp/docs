@@ -28,4 +28,4 @@ arix dev
 
 El servidor de despliegue requiere PHP 8.4.1 o posterior y la extensión mbstring.
 
-Normalmente, el servidor de desarrollo se inicia en `http://127.0.0.1:8181`. Ejecuta `arix dev --help` para consultar sus opciones.
+Normalmente, el servidor de desarrollo se inicia en `http://127.0.0.1:8181`. Abre la dirección que aparece en la terminal y continúa con [tu primera aplicación](first-application). Pulsa Ctrl+C para detener el servidor. Ejecuta `arix dev --help` para consultar sus opciones.

@@ -16,7 +16,7 @@ it('shows the home page', function (): void {
 });
 ```
 
-Las pruebas HTTP despachan solicitudes dentro del proceso.
+Las pruebas HTTP despachan solicitudes dentro del proceso. No verifican el entorno HTTP, las reescrituras ni el bloqueo de archivos privados por el servidor web; comprueba esos aspectos por separado durante el [despliegue](deployment).
 
 La respuesta de prueba admite `assertStatus()`, `assertOk()` y `assertSee()`. Pasa un caso de `Arix\Constants\HttpStatusCode` a `assertStatus()`, por ejemplo, `HttpStatusCode::NOT_FOUND`. El caso de prueba también proporciona métodos como `post()`, `put()`, `patch()` y `delete()` para probar otras rutas.
 

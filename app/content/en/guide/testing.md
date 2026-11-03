@@ -16,7 +16,7 @@ it('shows the home page', function (): void {
 });
 ```
 
-HTTP tests dispatch requests in process.
+HTTP tests dispatch requests in process. They do not verify the HTTP runtime, server rewrites, or whether private files are blocked by your web server; check those separately during [deployment](deployment).
 
 The test response supports `assertStatus()`, `assertOk()`, and `assertSee()`. Pass an `Arix\Constants\HttpStatusCode` case to `assertStatus()`, such as `HttpStatusCode::NOT_FOUND`. The test case also provides methods such as `post()`, `put()`, `patch()`, and `delete()` for testing other routes.
 

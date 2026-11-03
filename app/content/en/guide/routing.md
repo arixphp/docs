@@ -27,6 +27,8 @@ Route::get('/articles/{id:\d+}', [ArticleController::class, 'show']);
 
 Read `id` from the request attributes in the controller. A parameter matches one path segment; its value is a string controlled by the visitor. Validate it for your use and escape it when rendering output.
 
+For a complete controller example that reads and escapes an `id`, see [requests and responses](http#requests).
+
 Constraints must be valid patterns without capturing groups or the `~` delimiter. Names beginning with `_arix_` are reserved. Optional trailing segments use square brackets:
 
 ```php

@@ -25,6 +25,10 @@ Use `json()` for a JSON response; invalid JSON raises an HTTP client exception. 
 
 ## Security {#security}
 
-Redirects are disabled by default. The client verifies TLS, applies timeouts and response-size limits, and restricts connections to addresses belonging to the deployment unless a host is explicitly allowed. Never treat a visitor-supplied URL as inherently safe.
+Redirects are disabled by default. The client verifies TLS and applies timeouts and response-size limits. Without an allowlist, it rejects reserved addresses, including private and loopback addresses. An explicit host allowlist permits only the listed hosts, including their resolved addresses; allowing a host is a deliberate trust decision. Never treat a visitor-supplied URL as inherently safe.
+
+```php
+$client = Http::create()->withAllowedHosts(['api.example.com']);
+```
 
 If redirects are enabled, credentials are removed when crossing to another origin, and HTTPS-to-HTTP redirects are rejected. These protections do not make untrusted request bodies safe to forward.

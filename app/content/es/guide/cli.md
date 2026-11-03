@@ -6,10 +6,11 @@ La CLI crea y mantiene aplicaciones en tu entorno de desarrollo. Ejecuta `arix n
 
 ```sh
 arix new my-site
+cd my-site
 arix dev
-arix tests
-arix format --test
 ```
+
+El servidor continúa ejecutándose hasta que lo detengas. En otra terminal, desde la raíz de la aplicación, ejecuta `arix tests` para probarla o `arix format --test` para comprobar el formato.
 
 Consulta la [guía del servidor de desarrollo](cli-development) para más información.
 

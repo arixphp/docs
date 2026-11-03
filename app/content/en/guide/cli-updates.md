@@ -21,7 +21,7 @@ arix core:update --online --dry-run
 arix core:update --online
 ```
 
-`--online` selects the latest stable CLI release. An online failure does not silently fall back to the embedded bundle; rerun without `--online` if you intend to use it. For a non-interactive update, `--yes` confirms the operation but does not bypass validation. There is no core-update `--force` option.
+`--online` selects the latest stable CLI release. An online failure does not silently fall back to the embedded bundle; rerun without `--online` if you intend to use it. For a non-interactive update, `--yes` confirms the operation but does not bypass validation. Stop HTTP traffic before updating, refresh application caches and OPcache before reopening, and verify the site through its actual web server afterward. There is no core-update `--force` option.
 
 ## Updating Frontend Assets {#frontend}
 

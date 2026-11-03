@@ -21,7 +21,7 @@ arix core:update --online --dry-run
 arix core:update --online
 ```
 
-`--online` selecciona la última versión estable de la CLI. Si falla la actualización en línea no se usa silenciosamente el paquete incluido; ejecuta de nuevo sin `--online` si deseas utilizarlo. Para una actualización no interactiva, `--yes` confirma la operación, pero no omite la validación. No existe una opción `--force` para actualizar el core.
+`--online` selecciona la última versión estable de la CLI. Si falla la actualización en línea no se usa silenciosamente el paquete incluido; ejecuta de nuevo sin `--online` si deseas utilizarlo. Para una actualización no interactiva, `--yes` confirma la operación, pero no omite la validación. Detén el tráfico HTTP antes de actualizar, renueva las cachés de la aplicación y OPcache antes de reabrir, y verifica después el sitio mediante su servidor web real. No existe una opción `--force` para actualizar el core.
 
 ## Actualizar recursos frontend {#frontend}
 

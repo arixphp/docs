@@ -26,4 +26,4 @@ Registra la acción en `app/routes.php`. Las acciones deben ser métodos públic
 
 ## Dependencias {#dependencies}
 
-Los controladores sin parámetros obligatorios en el constructor se pueden resolver directamente. Registra explícitamente en el contenedor las dependencias obligatorias; Arix no las conecta automáticamente.
+Los controladores sin parámetros obligatorios en el constructor se pueden resolver directamente. Registra explícitamente en el contenedor las dependencias obligatorias; Arix no las conecta automáticamente. Consulta [servicios](services) para ver un ejemplo de registro.

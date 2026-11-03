@@ -33,11 +33,14 @@ Middleware may return a response without calling the next handler when it intent
 
 ```php
 use App\Middleware\SetLocale;
+use Arix\Application;
 use Arix\Http\MiddlewareConfiguration;
 
-->withMiddleware(static function (MiddlewareConfiguration $middleware): void {
-    $middleware->append(SetLocale::class);
-})
+return Application::configure(dirname(__DIR__))
+    ->withMiddleware(static function (MiddlewareConfiguration $middleware): void {
+        $middleware->append(SetLocale::class);
+    })
+    ->create();
 ```
 
 Generate a starting point with `arix make:middleware Example`. Review the generated class and register it before expecting it to run.

@@ -26,4 +26,4 @@ Register the action in `app/routes.php`. Actions must be public instance methods
 
 ## Dependencies {#dependencies}
 
-Controllers without required constructor parameters can be resolved directly. Register required constructor dependencies explicitly in the container; Arix does not automatically wire them.
+Controllers without required constructor parameters can be resolved directly. Register required constructor dependencies explicitly in the container; Arix does not automatically wire them. See [services](services) for a registration example.

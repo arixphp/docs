@@ -6,10 +6,11 @@ The CLI creates and maintains applications from your development machine. Run `a
 
 ```sh
 arix new my-site
+cd my-site
 arix dev
-arix tests
-arix format --test
 ```
+
+The server keeps running until you stop it. In another terminal, from the application root, run `arix tests` to test the application or `arix format --test` to check formatting.
 
 See the [development server guide](cli-development) for details.
 

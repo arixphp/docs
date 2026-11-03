@@ -28,4 +28,4 @@ arix dev
 
 Your deployment server requires PHP 8.4.1 or newer and the mbstring extension.
 
-The development server normally starts at `http://127.0.0.1:8181`. Run `arix dev --help` to see its options.
+The development server normally starts at `http://127.0.0.1:8181`. Open the address printed in the terminal, then follow [your first application](first-application). Press Ctrl+C to stop the server. Run `arix dev --help` to see its options.

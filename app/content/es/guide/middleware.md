@@ -33,11 +33,14 @@ El middleware puede devolver una respuesta sin llamar al siguiente manejador cua
 
 ```php
 use App\Middleware\SetLocale;
+use Arix\Application;
 use Arix\Http\MiddlewareConfiguration;
 
-->withMiddleware(static function (MiddlewareConfiguration $middleware): void {
-    $middleware->append(SetLocale::class);
-})
+return Application::configure(dirname(__DIR__))
+    ->withMiddleware(static function (MiddlewareConfiguration $middleware): void {
+        $middleware->append(SetLocale::class);
+    })
+    ->create();
 ```
 
 Genera un punto de partida con `arix make:middleware Example`. Revisa la clase generada y regístrala antes de esperar que se ejecute.

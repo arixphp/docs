@@ -136,11 +136,6 @@ install Pest in the application. XML and tests are trusted developer code, not a
   fails). `.arix.php` views are compiled into a private, writable cache; without write access
   they fail with 500 — do not enable `allow_eval` to hide the problem (disabled by default,
   only for trusted-code templates).
-- HTML caching (`Route::get(...)->cache()`) stores View output only and bypasses cookies,
-  Authorization, unknown query parameters and nonempty body. Implicit HEAD shares GET; explicit
-  HEAD does not. Fingerprints include controllers, routes.php, services.php, views, languages,
-  configuration and public assets. Response output and non-GET routes are never stored; HTTP
-  writes do not invalidate external data.
 - Sensitive extensions/files are blocked in `.htaccess`, `web.config`, and the development
   `Caddyfile`: if you touch routes or assets, verify that all layers remain aligned. Caddy
   follows symlinks, so public asset directories must not contain any.

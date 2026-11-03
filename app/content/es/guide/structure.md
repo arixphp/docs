@@ -5,17 +5,19 @@ Una aplicación Arix mantiene tu código y el framework juntos, con una separaci
 ## Directorios {#directories}
 
 ```text
-app/       Application code, routes, views, and configuration
-core/      Framework code managed by the CLI
-styles/    Public stylesheets
-scripts/   Public JavaScript
-media/     Public images and other media
-fonts/     Public font files
-storage/   Private cache and logs
-tests/     Application tests
+app/       Código, rutas, vistas y configuración de la aplicación
+core/      Código del framework administrado por la CLI
+styles/    Hojas de estilo públicas
+scripts/   JavaScript público
+media/     Imágenes y otros medios públicos
+fonts/     Archivos de fuentes públicas
+storage/   Archivos privados de la aplicación, caché y registros
+tests/     Pruebas de la aplicación
 ```
 
 La aplicación comienza en `index.php`. Define las rutas en `app/routes.php` y guarda los controladores en `app/Controllers`. No edites `core/`; la CLI lo administra.
+
+Los archivos privados administrados por `storage()` están bajo `storage/app/`. Los documentos Markdown del desarrollador pueden estar en el directorio opcional `app/content/`; consulta [almacenamiento de archivos](storage) y [Markdown](markdown).
 
 ## Carga automática {#autoloading}
 
