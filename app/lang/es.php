@@ -5,6 +5,7 @@ declare(strict_types=1);
 return [
     'nav' => [
         'home' => 'Inicio',
+        'features' => 'Características',
         'about' => 'Acerca de',
         'label' => 'Navegación principal',
         'languages' => 'Idioma',

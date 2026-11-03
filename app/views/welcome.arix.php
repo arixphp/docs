@@ -33,7 +33,7 @@
     </div>
 </section>
 
-<section class="home-overview">
+<section class="home-overview" id="features">
     <div>
         <h2>{{ trans('home.overview_title') }}</h2>
         <p>{{ trans('home.overview_text') }}</p>
