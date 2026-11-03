@@ -25,7 +25,13 @@
             <img class="brand-mark" src="{{ media('arix-icon.webp') }}" alt="" width="96" height="96" decoding="async">
             <span>{{ config('app.name') }}</span>
         </a>
-        @include('partials.navigation')
+        <div class="desktop-navigation">@include('partials.navigation')</div>
+        <details class="mobile-navigation">
+            <summary aria-label="{{ trans('nav.label') }}">
+                <span aria-hidden="true">@include('components.icons.menu')</span>
+            </summary>
+            @include('partials.navigation')
+        </details>
     </header>
     <main id="main-content" tabindex="-1">@yield('content')</main>
     <footer>
@@ -39,7 +45,7 @@
         <nav aria-label="{{ trans('nav.label') }}">
             <a href="{{ url('/') }}">{{ trans('nav.home') }}</a>
             <a href="{{ url('/guide/') }}">{{ trans('guide.navigation') }}</a>
-            <a href="https://github.com/arixphp" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="external-link" href="https://github.com/arixphp" target="_blank" rel="noopener noreferrer">GitHub @include('components.icons.arrow-right-up')</a>
         </nav>
     </footer>
 </body>

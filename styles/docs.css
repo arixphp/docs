@@ -1,9 +1,15 @@
 @layer application {
     body { max-width: none; padding: 0; }
     body > header, body > footer { max-width: 88rem; margin-inline: auto; }
-    body > header { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: 1.25rem clamp(1.25rem, 5vw, 4rem); border-bottom: 1px solid var(--color-border); }
-    .nav-pages { display: flex; gap: 1.5rem; align-items: center; }
+    body > header { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: .75rem clamp(1.25rem, 5vw, 4rem); border-bottom: 1px solid var(--color-border); }
+    body > header .brand { flex-shrink: 0; font-size: 1.125rem; }
+    .mobile-navigation { display: none; }
+    .nav-pages { display: flex; gap: .25rem; align-items: center; }
+    .nav-pages a { display: inline-flex; align-items: center; min-height: 2.75rem; padding: .5rem .85rem; border-radius: var(--radius-sm); color: var(--color-muted); }
+    .nav-pages a:hover { color: var(--color-text); background: var(--color-surface); }
+    .nav-pages a[aria-current="page"] { color: var(--color-accent); background: var(--color-surface); }
     .nav-pages a, .guide-nav a { text-decoration: none; }
+    .external-link { gap: .35em; }
     body > main { max-width: none; padding: 0; }
     body > footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 2rem 3rem; padding: 2.5rem clamp(1.25rem, 5vw, 4rem); border-top: 1px solid var(--color-border); color: var(--color-muted); }
     .footer-identity { display: grid; gap: .75rem; }
@@ -100,9 +106,23 @@
         .guide-toc { position: sticky; top: 2rem; }
     }
     @media (max-width: 32rem) {
-        body > header { padding-inline: 1rem; gap: .75rem; }
-        .nav-pages { gap: .75rem; font-size: .875rem; }
+        body > header { position: relative; justify-content: space-between; padding-inline: 1rem; gap: .25rem 1rem; }
+        .desktop-navigation { display: none; }
+        .mobile-navigation { display: block; }
+        .mobile-navigation summary { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; cursor: pointer; border-radius: var(--radius-sm); list-style: none; }
+        .mobile-navigation summary::-webkit-details-marker { display: none; }
+        .mobile-navigation summary:hover, .mobile-navigation[open] summary { background: var(--color-surface); }
+        .mobile-navigation summary span, .mobile-navigation summary svg { display: block; width: 1.5rem; height: 1.5rem; }
+        .mobile-navigation summary svg path { stroke: var(--color-text); }
+        .mobile-navigation nav { position: absolute; z-index: 10; top: calc(100% + .5rem); right: 1rem; width: min(15rem, calc(100vw - 2rem)); padding: .5rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); box-shadow: 0 .75rem 2rem rgb(0 0 0 / .18); }
+        .mobile-navigation .nav-pages { width: 100%; flex-direction: column; align-items: stretch; gap: .25rem; }
+        .mobile-navigation .nav-pages a { justify-content: flex-start; padding-inline: 1rem; }
+        .mobile-navigation .nav-pages a:hover { background: color-mix(in srgb, var(--color-text) 8%, var(--color-surface)); }
+        .mobile-navigation .nav-pages a[aria-current="page"] { color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 14%, var(--color-surface)); font-weight: 600; }
         .brand { white-space: nowrap; }
+        body > footer { flex-direction: column; align-items: center; text-align: center; }
+        .footer-identity { justify-items: center; }
+        body > footer nav { justify-content: center; }
         .guide-layout { gap: 1.5rem; }
     }
 }

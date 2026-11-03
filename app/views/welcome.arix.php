@@ -52,7 +52,10 @@
 
 <section class="home-next">
     <h2>{{ trans('home.next_title') }}</h2>
-    <p>{{ trans('home.next_text') }}</p><a class="button-primary" href="{{ url('/guide/') }}">{{
-        trans('home.read_guide') }} <span aria-hidden="true">→</span></a>
+    <p>{{ trans('home.next_text') }}</p>
+    <a class="button-primary" href="{{ url('/guide/') }}">{{
+        trans('home.read_guide') }}
+        @include('components.icons.arrow-right')
+    </a>
 </section>
 @endsection
