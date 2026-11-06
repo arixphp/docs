@@ -45,6 +45,7 @@
         <nav aria-label="{{ trans('nav.label') }}">
             <a href="{{ url('/') }}">{{ trans('nav.home') }}</a>
             <a href="{{ url('/guide/') }}">{{ trans('guide.navigation') }}</a>
+            <a href="{{ url('/blog') }}">{{ trans('blog.title') }}</a>
             <a class="external-link" href="https://github.com/arixphp" target="_blank" rel="noopener noreferrer">GitHub @include('components.icons.arrow-right-up')</a>
         </nav>
     </footer>

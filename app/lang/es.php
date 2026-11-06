@@ -34,6 +34,14 @@ return [
         'feature_deployment_title' => 'Diseñado para hosting PHP tradicional', 'feature_deployment' => 'Tu aplicación incluye el código que necesita. Publícala sin Composer, Node ni compilación frontend en el servidor.',
         'next_title' => '¿Listo para crear algo?', 'next_text' => 'Crea tu primera página y explora los detalles cuando los necesites.', 'read_guide' => 'Crea tu primera página',
     ],
+    'blog' => [
+        'title' => 'Blog',
+        'description' => 'Guías prácticas para crear y publicar con Arix.',
+        'intro' => 'De un proyecto local a un sitio publicado. Sigue guías prácticas a tu propio ritmo.',
+        'read' => 'Leer artículo',
+        'all' => 'Todos los artículos',
+        'article_not_found' => 'Artículo no encontrado.',
+    ],
     'footer' => 'HTML generado en el servidor. Creado para la web.',
     'guide' => [
         'browse' => 'Explorar la documentación',

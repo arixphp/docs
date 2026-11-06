@@ -34,6 +34,14 @@ return [
         'feature_deployment_title' => 'Built for traditional PHP hosting', 'feature_deployment' => 'Your application ships with the code it needs. Publish without Composer, Node, or a frontend build on the server.',
         'next_title' => 'Ready to build something?', 'next_text' => 'Create your first page, then explore the details when you need them.', 'read_guide' => 'Build your first page',
     ],
+    'blog' => [
+        'title' => 'Blog',
+        'description' => 'Practical guides for building and publishing with Arix.',
+        'intro' => 'From a local project to a live website. Follow practical guides at your own pace.',
+        'read' => 'Read article',
+        'all' => 'All articles',
+        'article_not_found' => 'Article not found.',
+    ],
     'footer' => 'Server-rendered HTML. Built for the web.',
     'guide' => [
         'browse' => 'Browse documentation',

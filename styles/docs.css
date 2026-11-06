@@ -103,6 +103,26 @@
     .guide-pagination { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border); }
     .guide-pagination a { display: flex; flex-direction: column; gap: .25rem; text-decoration: none; }
     .guide-pagination small { color: var(--color-muted); }
+    .blog-index, .blog-page { max-width: 72rem; margin-inline: auto; padding: clamp(3rem, 7vw, 6rem) clamp(1.25rem, 5vw, 4rem) 7rem; }
+    .blog-intro { max-width: 48rem; padding-bottom: clamp(3rem, 6vw, 5rem); }
+    .blog-intro h1 { margin: 0; font-size: clamp(3rem, 6vw, 5rem); line-height: 1.05; letter-spacing: -.04em; }
+    .blog-intro p { max-width: 42rem; margin: 1.5rem 0 0; color: var(--color-muted); font-size: 1.2rem; line-height: 1.7; }
+    .blog-list { border-top: 1px solid var(--color-border); }
+    .blog-entry { display: grid; gap: 1rem; padding-block: 2rem 2.5rem; border-bottom: 1px solid var(--color-border); }
+    .blog-entry-category { color: var(--color-accent); font-size: .875rem; font-weight: 600; }
+    .blog-entry h2 { margin: 0; font-size: clamp(1.6rem, 3vw, 2.25rem); line-height: 1.2; letter-spacing: -.03em; }
+    .blog-entry h2 a { color: var(--color-text); text-decoration: none; }
+    .blog-entry h2 a:hover { color: var(--color-accent); }
+    .blog-entry p { max-width: 55ch; color: var(--color-muted); line-height: 1.7; }
+    .blog-read { display: inline-flex; align-items: center; gap: .5rem; font-weight: 600; text-decoration: none; }
+    .blog-read svg { width: 1em; height: 1em; }
+    .blog-back { display: inline-block; margin-bottom: 2.5rem; color: var(--color-muted); text-decoration: none; }
+    .blog-back:hover { color: var(--color-accent); }
+    .blog-article-layout { display: grid; gap: 3rem; }
+    .blog-content h1 { margin-top: 0; text-wrap: balance; }
+    .blog-toc { border-top: 1px solid var(--color-border); padding-top: 1.5rem; }
+    @media (min-width: 48rem) { .blog-entry { grid-template-columns: 12rem minmax(0, 1fr); gap: 2rem; } }
+    @media (min-width: 64rem) { .blog-article-layout { grid-template-columns: minmax(0, 1fr) 13rem; gap: 4rem; } .blog-toc { position: sticky; top: 2rem; } }
     :focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
     @media (min-width: 64rem) {
         .home-start { grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); align-items: center; }
