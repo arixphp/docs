@@ -39,6 +39,7 @@ class BlogController
         return view('blog.article', [
             'title' => $article['title'],
             'description' => $article['excerpt'],
+            'publishedAt' => $article['publishedAt'],
             'content' => $document->html,
             'contentLanguage' => $language,
             'contents' => $contents,

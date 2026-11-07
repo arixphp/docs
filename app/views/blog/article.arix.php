@@ -4,7 +4,10 @@
 <div class="blog-page">
     <a class="blog-back" href="{{ url('/blog') }}">← {{ trans('blog.all') }}</a>
     <div class="blog-article-layout">
-        <article class="guide-content blog-content" lang="{{ $contentLanguage }}">{!! $content !!}</article>
+        <article class="guide-content blog-content" lang="{{ $contentLanguage }}">
+            <time datetime="{{ $publishedAt }}">{{ $publishedAt }}</time>
+            {!! $content !!}
+        </article>
         <nav class="guide-toc blog-toc" aria-label="{{ trans('guide.contents') }}">
             <strong>{{ trans('guide.contents') }}</strong>
             @foreach ($contents as $heading)
