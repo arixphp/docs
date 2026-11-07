@@ -151,6 +151,28 @@ install Pest in the application. XML and tests are trusted developer code, not a
   hosting server.
 - Use `type|null` instead `?type` for nullable parameters.
 
+## Blog articles
+
+Place articles in `app/content/en/blog/` and `app/content/es/blog/`, using the
+same lowercase, hyphen-separated filename for translations. The filename is the
+URL slug. Each Markdown file starts with three required, single-line fields:
+
+```markdown
+---
+title: Article title
+excerpt: A short description of the article.
+publishedAt: 2026-11-04
+---
+# Article title
+
+Article content.
+```
+
+Dates use `YYYY-MM-DD`. Articles are listed newest first in the requested
+language; a missing translation returns 404. Files are read on each request,
+without an index, cache, or publishing command. Article files are trusted,
+developer-owned content and must not be writable by visitors.
+
 ## Working on the skeleton repository
 
 This section applies to this repository (`arixphp/app`) only. It does not apply to
