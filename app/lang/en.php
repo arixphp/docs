@@ -40,6 +40,7 @@ return [
         'intro' => 'From a local project to a live website. Follow practical guides at your own pace.',
         'read' => 'Read article',
         'all' => 'All articles',
+        'published_on' => 'Published on',
         'article_not_found' => 'Article not found.',
     ],
     'footer' => 'Server-rendered HTML. Built for the web.',

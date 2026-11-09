@@ -40,6 +40,7 @@ return [
         'intro' => 'De un proyecto local a un sitio publicado. Sigue guías prácticas a tu propio ritmo.',
         'read' => 'Leer artículo',
         'all' => 'Todos los artículos',
+        'published_on' => 'Publicado el',
         'article_not_found' => 'Artículo no encontrado.',
     ],
     'footer' => 'HTML generado en el servidor. Creado para la web.',
