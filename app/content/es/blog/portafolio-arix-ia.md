@@ -1,15 +1,24 @@
 ---
-title: Crea un portafolio con Arix y un agente de IA
-excerpt: Construye un portafolio con blog desde cero con Arix, Impeccable y desarrollo guiado por IA.
+title: Crea un portafolio PHP con Arix y un agente de IA
+excerpt: Construye un portafolio PHP con blog Markdown y pruébalo sin Composer ni compilación frontend en producción.
 publishedAt: 2026-11-06
 ---
-# Crea un portafolio con Arix y un agente de IA {#portfolio-with-ai}
+# Crea un portafolio PHP con Arix y un agente de IA {#portfolio-with-ai}
 
-Crea un portafolio de desarrollador con un blog, desde la instalación de la CLI hasta las pruebas. Prepara el contexto y los archivos iniciales; después pide a un agente de IA que proponga un plan antes de implementar. Usa Impeccable para orientar el diseño y, opcionalmente, Anatomy para una ilustración interactiva que explique uno de tus proyectos.
+Crea un portafolio de desarrollador con PHP y un blog Markdown, desde la instalación de la CLI hasta las pruebas. Arix genera HTML en el servidor y organiza rutas, controladores, servicios y vistas; un agente de IA te ayudará a planificar e implementar el proyecto. El resultado está pensado para hosting PHP compatible sin Composer, Node ni compilación frontend en producción.
+
+## Qué construirás {#what-youll-build}
+
+- `/`: presentación, habilidades y proyectos destacados.
+- `/blog`: listado de artículos de ejemplo escritos en Markdown.
+- `/blog/{slug}`: detalle de un artículo y respuesta 404 si no existe.
+- Una interfaz adaptable y accesible, con pruebas automatizadas.
+
+No necesitas base de datos, autenticación, panel de administración ni formulario de contacto funcional. Arix es una opción para este proyecto porque permite generar páginas con PHP y mantener los archivos necesarios para ejecutarlas en el servidor; si solo necesitas páginas que no cambian, un sitio estático también puede ser suficiente.
 
 ## Antes de empezar {#prerequisites}
 
-Necesitas una terminal, conexión a internet, un agente de programación compatible con skills y Node.js 18.19 o posterior con `npx` en tu computadora. Node se utiliza aquí para instalar las herramientas de IA, no es un requisito de la aplicación en producción. Arix no requiere Composer, Node ni compilación frontend en el servidor. El alojamiento necesita PHP 8.4.1 o posterior, mbstring y un servidor compatible; consulta la [guía de despliegue](../guide/deployment).
+Necesitas una terminal, conexión a internet y un agente de programación con modo planificación. La CLI empaquetada incluye PHP para desarrollo. Impeccable y Anatomy son opcionales: si decides instalarlos, necesitas Node y `npx` en tu computadora. Arix no requiere Composer, Node ni compilación frontend en el servidor. El alojamiento necesita PHP 8.4.1 o posterior, mbstring y un servidor compatible; consulta la [guía de despliegue](../guide/deployment).
 
 ## Instala Arix y crea la aplicación {#install-arix}
 
@@ -34,25 +43,9 @@ cd portfolio
 
 Ejecuta los siguientes comandos desde esa raíz. Consulta la [guía de instalación](../guide/installation) si necesitas más detalles.
 
-## Instala las skills {#install-skills}
-
-Instala Impeccable y elige tu agente y la instalación para este proyecto cuando se te pregunte:
-
-```sh
-npx impeccable install
-```
-
-Instala Anatomy para tener disponible la ilustración opcional:
-
-```sh
-npx skills add https://github.com/wheresryan22/anatomy --skill anatomy
-```
-
-Sigue las opciones del instalador para tu agente y recarga tu herramienta de programación. Los nombres de comandos y la compatibilidad dependen del agente: consulta las instrucciones actuales de [Impeccable](https://impeccable.style/tutorials/getting-started) y [Anatomy](https://www.skills.sh/wheresryan22/anatomy/anatomy) si no aparecen las skills. Instala únicamente herramientas en las que confíes.
-
 ## Describe el producto en el README {#product-readme}
 
-Antes de inicializar Impeccable, reemplaza el contenido de `README.md` de la aplicación recién creada por el siguiente texto. Si trabajas en un proyecto existente, conserva primero cualquier información que necesites. Personaliza los marcadores con tus datos.
+Reemplaza el contenido inicial de `README.md` de la aplicación recién creada por el siguiente texto para que el agente conozca el producto. Esto sustituye la documentación incluida en ese archivo: guárdala primero si la necesitas. Si trabajas en un proyecto existente, conserva también tu información. Personaliza los marcadores con tus datos.
 
 ```markdown
 # Portafolio de desarrollador
@@ -82,7 +75,17 @@ contactarme rápidamente, también desde el móvil.
 - Correo y redes: [añadir enlaces reales]
 ```
 
-## Inicializa Impeccable {#initialize-impeccable}
+## Opcional: usa Impeccable para el diseño {#install-skills}
+
+Puedes continuar sin esta herramienta. Si quieres usar [Impeccable](https://impeccable.style/tutorials/getting-started), necesitas Node.js 18.19 o posterior y `npx` en tu computadora, además de un agente compatible. Después de preparar el README, instala Impeccable desde la raíz del proyecto:
+
+```sh
+npx impeccable install
+```
+
+Selecciona tu agente y la instalación para el proyecto; después recarga tu herramienta de programación.
+
+### Inicializa Impeccable {#initialize-impeccable}
 
 En el chat de tu agente, ejecuta:
 
@@ -90,7 +93,7 @@ En el chat de tu agente, ejecuta:
 /impeccable init
 ```
 
-Impeccable lee el proyecto, pregunta por los datos que faltan y guarda el contexto acordado en `PRODUCT.md`. Responde sus preguntas y revisa ese archivo: corrige cualquier suposición y deja claras las decisiones pendientes. El README aporta contexto; no reemplaza `PRODUCT.md`. Para otro agente, consulta la sintaxis correspondiente en la [documentación de Impeccable](https://impeccable.style/docs/init).
+Impeccable lee el proyecto, pregunta por los datos que faltan y guarda el contexto acordado en `PRODUCT.md`. Responde sus preguntas y revisa ese archivo: corrige cualquier suposición y deja claras las decisiones pendientes. El README aporta contexto; no reemplaza `PRODUCT.md`. Para otro agente, consulta la sintaxis correspondiente en la [documentación de Impeccable](https://impeccable.style/docs/init). Si omites esta sección, no necesitas crear `PRODUCT.md`.
 
 ## Prepara controladores, vistas y pruebas {#generate-files}
 
@@ -115,11 +118,53 @@ arix make:test BlogTest
 
 Estos archivos son puntos de partida: todavía no implementan el blog ni registran rutas. Los generadores no reemplazan archivos existentes por defecto; si un nombre ya existe, inspecciónalo y reutilízalo o elige otro. El agente completará el comportamiento y registrará las rutas explícitamente en `app/routes.php`.
 
+## Pide un plan al agente {#agent-prompt}
+
+Activa el **modo planificación** de tu agente y pega el siguiente prompt. No requiere skills. En este paso pide un plan, no cambios de código.
+
+```text
+Quiero desarrollar el portafolio y blog descritos en README.md.
+Lee README.md, las instrucciones del proyecto, rutas, controladores, vistas,
+servicios y pruebas existentes. Si existe PRODUCT.md, léelo también y señala
+cualquier contradicción. No supongas APIs que no estén documentadas.
+Propón una dirección visual original y accesible. Si elegí Impeccable y está
+disponible, úsalo para el diseño. Usa Anatomy solo si está disponible y lo apruebo;
+su ilustración debe respetar movimiento reducido y entenderse sin animación.
+
+Antes de editar archivos, presenta un plan por pasos y espera mi aprobación.
+Incluye archivos afectados, arquitectura, decisiones de diseño, riesgos,
+preguntas pendientes y cómo verificarlo.
+
+Para la implementación posterior:
+- Respeta la arquitectura y las instrucciones de Arix. No modifiques core/ ni
+  agregues dependencias o pasos de compilación necesarios en el servidor.
+- Reutiliza WelcomeController y la vista de bienvenida para la página principal.
+- Completa BlogController, las vistas blog.index y blog.show y las rutas explícitas
+  para /blog y /blog/{slug}. Conserva el resto de rutas existentes.
+- Crea ArticleService para listar y buscar artículos de ejemplo en archivos
+  Markdown creados por el desarrollador, sin base de datos ni publicación por
+  visitantes. Inyéctalo por constructor en BlogController y registra las fábricas
+  de ambas clases en app/services.php, conservando los registros existentes.
+- Guarda ejemplos en app/content/blog/ con título y fecha YYYY-MM-DD en front
+  matter. Usa slugs con letras minúsculas, números y guiones. Resuelve el slug
+  mediante una lista permitida, nunca como ruta directa a un archivo; responde
+  404 si no existe. Escapa metadatos según su contexto y consulta la guía de
+  Markdown para renderizar el HTML de los archivos del desarrollador.
+- Adapta `tests/Feature/WelcomeTest.php` para comprobar la portada y completa
+  `BlogTest` con pruebas del listado, un artículo existente y un slug inexistente.
+  Usa las API reales de pruebas de Arix y conserva las demás pruebas existentes.
+- Diseña para pantallas pequeñas, teclado, lectores de pantalla y movimiento
+  reducido. Usa solo datos reales que te proporcione o ejemplos identificados.
+- No implementes filtrado, despliegue, autenticación ni formularios de contacto.
+```
+
+Revisa el plan y solicita cambios si hace falta. Cuando estés conforme, apruébalo y cambia al modo de implementación de tu agente. Revisa los cambios y sustituye los ejemplos por tu contenido antes de publicar.
+
 ## Define el servicio de artículos {#article-service}
 
-Para separar la lectura de artículos del controlador, pide al agente que cree `App\Services\ArticleService` en `app/Services/ArticleService.php`. Su responsabilidad será listar los artículos Markdown que crees y buscar uno por su slug. El controlador recibirá el servicio por constructor y lo utilizará para preparar las vistas; si no encuentra un artículo, responderá con 404.
+El plan debe separar la lectura de artículos del controlador mediante `App\Services\ArticleService` en `app/Services/ArticleService.php`. El servicio lista y busca los artículos; `BlogController` lo recibe por constructor y devuelve 404 si no encuentra uno. Arix no conecta automáticamente argumentos del constructor, por lo que ambas fábricas deben registrarse explícitamente en `app/services.php`.
 
-Arix no conecta automáticamente los argumentos del constructor. Para inyectar el servicio, registra una fábrica para cada clase en `app/services.php`. Este ejemplo muestra la conexión que el agente implementará; presupone que `ArticleService` tiene un constructor sin argumentos y que `BlogController` recibe el servicio:
+Este ejemplo ilustra la conexión que implementará el agente; presupone un constructor sin argumentos en `ArticleService` y que `BlogController` recibe el servicio:
 
 ```php
 <?php
@@ -138,45 +183,9 @@ return static function (Container $container): void {
 };
 ```
 
-El contenedor crea el servicio al resolver la fábrica del controlador y lo pasa a su constructor. Si `app/services.php` ya contiene registros, consérvalos y añade estos a la función existente. El siguiente prompt pide al agente crear las clases y completar esta conexión después de que apruebes el plan. Consulta la [guía de servicios](../guide/services) para conocer más opciones de registro.
+El contenedor crea el servicio cuando resuelve la fábrica del controlador. Si ya hay registros, consérvalos y añade los nuevos a la función existente. Consulta la [guía de servicios](../guide/services).
 
-## Pide un plan al agente {#agent-prompt}
-
-Activa el **modo planificación** de tu agente y pega el siguiente prompt. Ajusta los marcadores y, si no quieres la ilustración, indícalo. En este paso pide un plan, no cambios de código.
-
-```text
-Quiero desarrollar el portafolio y blog descritos en README.md.
-Lee README.md, PRODUCT.md, las instrucciones del proyecto y el código existente.
-Usa Impeccable para proponer una dirección visual original y accesible. Si aporta
-valor y lo apruebo, usa Anatomy para una ilustración interactiva opcional que
-explique uno de los proyectos; debe respetar la preferencia de movimiento reducido
-y seguir siendo comprensible sin animación.
-
-Antes de editar archivos, presenta un plan por pasos y espera mi aprobación.
-Incluye archivos afectados, decisiones de diseño, riesgos y cómo verificarlo.
-
-Para la implementación posterior:
-- Respeta la arquitectura y las instrucciones de Arix. No modifiques core/ ni
-  agregues dependencias o pasos de compilación necesarios en el servidor.
-- Reutiliza WelcomeController y la vista de bienvenida para la página principal.
-- Completa BlogController, las vistas blog.index y blog.show y las rutas explícitas
-  para /blog y /blog/{slug}. Conserva el resto de rutas existentes.
-- Crea ArticleService para listar y buscar artículos de ejemplo en archivos
-  Markdown creados por el desarrollador, sin base de datos ni publicación por
-  visitantes. Inyéctalo por constructor en BlogController y registra las fábricas
-  de ambas clases en app/services.php, conservando los registros existentes.
-- Resuelve el slug mediante una lista permitida, nunca como ruta directa a un
-  archivo; responde 404 si no existe. Escapa los datos al mostrarlos y consulta
-  la guía de Markdown para renderizar los artículos.
-- Adapta `tests/Feature/WelcomeTest.php` para comprobar la portada y completa
-  `BlogTest` con pruebas del listado, un artículo existente y un slug inexistente.
-  Usa las API reales de pruebas de Arix y conserva las demás pruebas existentes.
-- Diseña para pantallas pequeñas, teclado, lectores de pantalla y movimiento
-  reducido. Usa solo datos reales que te proporcione o ejemplos identificados.
-- No implementes filtrado, despliegue, autenticación ni formularios de contacto.
-```
-
-Revisa el plan y solicita cambios si hace falta. Cuando estés conforme, apruébalo y cambia al modo de implementación de tu agente. Revisa los cambios y sustituye los ejemplos por tu contenido antes de publicar.
+Los archivos Markdown del ejemplo son creados por el desarrollador, no por visitantes. La [guía de Markdown](../guide/markdown) explica cómo leerlos y renderizarlos: el modo seguro no es un sanitizador HTML general. Mantén una lista permitida de documentos y escapa títulos y metadatos según su contexto; no construyas rutas directamente con el slug de la solicitud.
 
 ## Ejecuta la aplicación y las pruebas {#run-and-test}
 
@@ -193,10 +202,19 @@ arix tests
 arix format --test
 ```
 
+Comprueba estos resultados antes de dar por terminado el proyecto:
+
+- `/` y `/blog` responden 200; un artículo conocido muestra su título y contenido, y uno inexistente responde 404.
+- Los enlaces se pueden usar con teclado y muestran el foco; en pantalla estrecha no hay desbordamiento horizontal significativo.
+- El contenido se entiende con movimiento reducido y no depende de animaciones.
+- `arix tests` y `arix format --test` terminan correctamente.
+
 La CLI proporciona el ejecutor Pest y el formateador. Las pruebas HTTP de Arix se ejecutan dentro del proceso: no verifican el servidor web, las reescrituras ni sus reglas de protección. Revisa esos aspectos por separado antes de desplegar.
 
 ## Sigue explorando Arix {#next-steps}
 
 Arix también admite traducciones mediante catálogos en `app/lang` y `trans()`; utiliza `app.default_locale` por defecto. No añade automáticamente prefijos de idioma ni negocia el idioma de la solicitud. Consulta la [guía de localización](../guide/localization) si quieres adaptar el portafolio a otros idiomas.
 
-Como retos opcionales, añade filtrado al listado del blog con pruebas para resultados y estado vacío; o publica el proyecto siguiendo la [guía de despliegue con Hostinger y GitHub](deploy-arix-hostinger-github), comprobando las protecciones del servidor y manteniendo los secretos fuera del repositorio.
+Como extensión opcional, [Anatomy](https://www.skills.sh/wheresryan22/anatomy/anatomy) puede ayudarte a crear una ilustración interactiva para explicar un proyecto. Para instalarla durante el desarrollo, con Node y `npx` y un agente compatible, ejecuta `npx skills add https://github.com/wheresryan22/anatomy --skill anatomy` y sigue las opciones para tu agente. No es necesaria para el portafolio.
+
+Como retos opcionales, añade filtrado al listado del blog con pruebas para resultados y estado vacío; o publica el proyecto siguiendo la [guía de despliegue con Hostinger y GitHub](deploy-arix-hostinger-github) y la [guía de seguridad](../guide/security), comprobando las protecciones del servidor y manteniendo los secretos fuera del repositorio. Has utilizado rutas, vistas, servicios, Markdown y pruebas de Arix para crear una aplicación PHP sin dependencias de compilación en producción.
